@@ -21,7 +21,7 @@ class ProductModel {
       'name': name,
       'description': description,
       'price': price,
-      'image': image,
+      //  'image': image,
     };
   }
 
