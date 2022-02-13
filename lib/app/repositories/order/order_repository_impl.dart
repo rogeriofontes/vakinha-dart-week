@@ -13,7 +13,8 @@ class OrderRepositoryImpl implements OrderRepository {
 
   @override
   Future<OrderPix> createOrder(Order order) async {
-    final result = await _restClient.post('/order/', {
+    log(order.toJson());
+    final result = await _restClient.post('/orders', {
       'userId': order.userId,
       'cpf': order.cpf,
       'address': order.address,
@@ -25,6 +26,7 @@ class OrderRepositoryImpl implements OrderRepository {
           .toList()
     });
 
+    //log(result.body);
     if (result.hasError) {
       log(
         'Erro ao realizar pedido ${result.statusCode}',

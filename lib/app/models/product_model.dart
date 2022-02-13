@@ -21,7 +21,7 @@ class ProductModel {
       'name': name,
       'description': description,
       'price': price,
-      //  'image': image,
+      'image': image,
     };
   }
 
@@ -39,4 +39,9 @@ class ProductModel {
 
   factory ProductModel.fromJson(String source) =>
       ProductModel.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'ProductModel(id: $id, name: $name, description: $description, price: $price, image: $image)';
+  }
 }
